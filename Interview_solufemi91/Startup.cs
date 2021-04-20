@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Interview_solufemi91.Repositories;
+using Interview_solufemi91.Wrapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +32,9 @@ namespace Interview_solufemi91
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddTransient<IConfigurationWrapper, ConfigurationWrapper>();
+            services.AddTransient<IBlogRepository, BlogRepository>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
