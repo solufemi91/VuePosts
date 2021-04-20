@@ -36,7 +36,7 @@ namespace Interview_solufemi91
 
             services.AddTransient<IConfigurationWrapper, ConfigurationWrapper>();
             services.AddTransient<IBlogRepository, BlogRepository>();
-            services.AddTransient<IBlogDataModelModelBuilder, BlogDataModelModelBuilder>();
+            services.AddTransient<IBlogDataModelBuilder, BlogDataModelBuilder>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
