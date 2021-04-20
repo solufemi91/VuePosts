@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Interview_solufemi91.Builders;
 using Interview_solufemi91.Repositories;
 using Interview_solufemi91.Wrapper;
 using Microsoft.AspNetCore.Builder;
@@ -35,6 +36,7 @@ namespace Interview_solufemi91
 
             services.AddTransient<IConfigurationWrapper, ConfigurationWrapper>();
             services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IBlogDataModelModelBuilder, BlogDataModelModelBuilder>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

@@ -2,7 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@using Newtonsoft.Json;
+
+@{
+    var obj = JsonConvert.SerializeObject(Model);
+}
+
+@model Interview_solufemi91.Models.BlogData
+
+<div id="BlogWrapper" data="@obj">
 </div>

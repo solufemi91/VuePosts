@@ -1,12 +1,9 @@
 ﻿using Dapper;
 using Interview_solufemi91.Models;
 using Interview_solufemi91.Wrapper;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Interview_solufemi91.Repositories
 {
@@ -26,7 +23,7 @@ namespace Interview_solufemi91.Repositories
             using (_sqlConnection = new SqlConnection(_configurationWrapper.ConnectionString))
             {
                 _sqlConnection.Open();
-                return _sqlConnection.Query<BlogPost>("dbo.spGetAllBlogPosts", null, commandType: CommandType.StoredProcedure);
+                return _sqlConnection.Query<BlogPost>(StoredProcedureKeys.GetAllBlogPosts, null, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -35,7 +32,7 @@ namespace Interview_solufemi91.Repositories
             using (_sqlConnection = new SqlConnection(_configurationWrapper.ConnectionString))
             {
                 _sqlConnection.Open();
-                return _sqlConnection.Query<BlogComment>("dbo.spGetAllBlogPostComment", null, commandType: CommandType.StoredProcedure);
+                return _sqlConnection.Query<BlogComment>(StoredProcedureKeys.GetAllBlogPostComments, null, commandType: CommandType.StoredProcedure);
             }
         }
 
