@@ -4,6 +4,7 @@ using Interview_solufemi91.Wrapper;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Interview_solufemi91.Repositories
 {
@@ -18,21 +19,21 @@ namespace Interview_solufemi91.Repositories
             _configurationWrapper = configurationWrapper;
         }
 
-        public IEnumerable<BlogPost> GetAllBlogPost()
+        public List<BlogPost> GetAllBlogPost()
         {
             using (_sqlConnection = new SqlConnection(_configurationWrapper.ConnectionString))
             {
                 _sqlConnection.Open();
-                return _sqlConnection.Query<BlogPost>(StoredProcedureKeys.GetAllBlogPosts, null, commandType: CommandType.StoredProcedure);
+                return _sqlConnection.Query<BlogPost>(StoredProcedureKeys.GetAllBlogPosts, null, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 
-        public IEnumerable<BlogComment> GetAllBlogPostComments()
+        public List<BlogComment> GetAllBlogPostComments()
         {
             using (_sqlConnection = new SqlConnection(_configurationWrapper.ConnectionString))
             {
                 _sqlConnection.Open();
-                return _sqlConnection.Query<BlogComment>(StoredProcedureKeys.GetAllBlogPostComments, null, commandType: CommandType.StoredProcedure);
+                return _sqlConnection.Query<BlogComment>(StoredProcedureKeys.GetAllBlogPostComments, null, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 

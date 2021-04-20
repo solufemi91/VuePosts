@@ -30,7 +30,7 @@ namespace Interview_solufemi91.Builders
                 }              
             }
 
-            blogData.Results = blogPosts.ToList();
+            blogData.Results = blogPosts;
 
             return blogData;
         }

@@ -8,8 +8,8 @@ namespace Interview_solufemi91.Repositories
 {
     public interface IBlogRepository
     {
-        IEnumerable<BlogPost> GetAllBlogPost();
+        List<BlogPost> GetAllBlogPost();
 
-        IEnumerable<BlogComment> GetAllBlogPostComments();
+        List<BlogComment> GetAllBlogPostComments();
     }
 }
