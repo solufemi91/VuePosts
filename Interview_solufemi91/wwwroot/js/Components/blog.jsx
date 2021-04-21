@@ -14,8 +14,8 @@ class Blog extends React.Component {
                 <p>Published on : {this.props.blogData.PublishedOn}</p>
                 <p>Number of Comments: {this.props.blogData.BlogComments.length}</p>
                 <div style={{ display: this.state.displayPostComments ? "block" : "none" }}>
-                    {this.props.blogData.BlogComments.map((blogComment) =>
-                        <div>
+                    {this.props.blogData.BlogComments.map((blogComment, index) =>
+                        <div key={index}>
                             <p>{blogComment.Comment}</p>
                             <p>Posted on: {blogComment.CommentedOn}</p>
                         </div>                       
