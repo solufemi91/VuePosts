@@ -1,5 +1,4 @@
 ﻿var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
     entry: './wwwroot/js/index.js',
@@ -10,20 +9,18 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx'],
+        extensions: ['*', '.js'],
         alias: {
-            react: path.resolve('node_modules/react')
+            vue: 'vue/dist/vue.js'
         }
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    cacheDirectory: true,
-                    presets: ['react', 'es2015']
+                    presets: ['es2015']
                 }
             }
         ]
