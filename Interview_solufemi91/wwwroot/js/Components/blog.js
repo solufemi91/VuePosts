@@ -1,26 +1,18 @@
-﻿export default {
-    props: {
-        blogData: {
-            type: Object,
-            required: true
+﻿import { actions } from '../types.js';
+
+export default {
+
+    computed: {
+        items() {
+            return this.$store.getters.getPosts;
         }
-    },
-    data: function () {
-        return {
-            items: this.reformat(this.blogData.Results),
-        }       
     },
 
     methods: {
-        displayComments(id) {
-            this.items.find(i => i.BlogPostId == id).displayComments = !this.items.find(i => i.BlogPostId == id).displayComments;
-        },
-        reformat(data) {
-            data.forEach(function (blog) {
-                blog.displayComments = false
+        displayComments(selectedBlogId) {
+            this.$store.dispatch(actions.alterDisplayStatus, {
+                id: selectedBlogId
             });
-
-            return data
         }
     }
 

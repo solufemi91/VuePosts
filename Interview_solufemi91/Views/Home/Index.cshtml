@@ -10,14 +10,14 @@
 
 @model Interview_solufemi91.Models.BlogDataModel
 
-<div id="BlogWrapper">
-    <blog v-cloak :blog-data="@obj" inline-template>
+<div id="BlogWrapper" data="@obj" v-cloak>
+    <blog inline-template v-cloak>
         <div>
             <div v-on:click="displayComments(item.BlogPostId)" v-for="(item, index) in items" :key="index">
                 <h1>{{item.Title}}</h1>
                 <p>Published on : {{item.PublishedOn}}</p>
                 <p>Number of Comments: {{item.BlogComments.length}}</p>
-                <div id="commments" v-show="item.displayComments">
+                <div id="commments" v-show="item.DisplayComments">
                     <div v-for="(blogComment, index) in item.BlogComments" :key="index">
                         <p>{{blogComment.Comment}}</p>
                         <p>Posted on: {{blogComment.CommentedOn}}</p>

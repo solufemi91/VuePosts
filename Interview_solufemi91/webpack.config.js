@@ -18,10 +18,10 @@ module.exports = {
         rules: [
             {
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
+                //query: {
+                //    presets: ['es2015']
+                //}
             }
         ]
     }

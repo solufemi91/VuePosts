@@ -12,5 +12,6 @@ namespace Interview_solufemi91.Models
         public string Body { get; set; }
         public DateTime PublishedOn { get; set; }
         public List<BlogComment> BlogComments { get; set; } = new List<BlogComment>();
+        public bool DisplayComments { get; set; }
     }
 }
