@@ -13,17 +13,19 @@
 <div id="BlogWrapper" data="@obj" v-cloak>
     <blog inline-template v-cloak>
         <div>
-            <div v-on:click="displayComments(item.BlogPostId)" v-for="(item, index) in items" :key="index">
-                <h1>{{item.Title}}</h1>
-                <p>Published on : {{item.PublishedOn}}</p>
-                <p>Number of Comments: {{item.BlogComments.length}}</p>
-                <div id="commments" v-show="item.DisplayComments">
-                    <div v-for="(blogComment, index) in item.BlogComments" :key="index">
-                        <p>{{blogComment.Comment}}</p>
-                        <p>Posted on: {{blogComment.CommentedOn}}</p>
+            <blog-post :blog-post-data="item" inline-template v-for="(item, index) in items"  :key="index" >
+                <div v-on:click="displayComments(blogPostData.BlogPostId)">
+                    <h1>{{blogPostData.Title}}</h1>
+                    <p>Published on : {{blogPostData.PublishedOn}}</p>
+                    <p>Number of Comments: {{blogPostData.BlogComments.length}}</p>
+                    <div id="commments" v-show="blogPostData.DisplayComments">
+                        <div v-for="(blogComment, index) in blogPostData.BlogComments" :key="index">
+                            <p>{{blogComment.Comment}}</p>
+                            <p>Posted on: {{blogComment.CommentedOn}}</p>
+                        </div>
                     </div>
-                </div>
-            </div>           
+                </div>              
+            </blog-post>           
         </div>
     </blog>
 </div>

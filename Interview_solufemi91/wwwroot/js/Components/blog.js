@@ -1,4 +1,5 @@
 ﻿import { actions, getters } from '../types.js';
+import blogPost from './blogPost.js';
 
 export default {
 
@@ -8,12 +9,8 @@ export default {
         }
     },
 
-    methods: {
-        displayComments(selectedBlogId) {
-            this.$store.dispatch(actions.alterDisplayStatus, {
-                id: selectedBlogId
-            });
-        }
+    components: {
+        'blogPost': blogPost
     }
 
 };
