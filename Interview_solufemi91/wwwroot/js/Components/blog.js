@@ -1,10 +1,10 @@
-﻿import { actions } from '../types.js';
+﻿import { actions, getters } from '../types.js';
 
 export default {
 
     computed: {
         items() {
-            return this.$store.getters.getPosts;
+            return this.$store.getters[getters.getPosts];
         }
     },
 
