@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VuePostsProject", "VuePosts\Interview_solufemi91.csproj", "{F56D0D52-B43D-4BE5-9BAD-1C7390CD074D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VuePostsProject", "VuePosts\VuePostsProject.csproj", "{F56D0D52-B43D-4BE5-9BAD-1C7390CD074D}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LBRDatabaseProject", "LBRDatabaseProject\LBRDatabaseProject.sqlproj", "{E6F209DB-6C1D-489C-9455-6723ED46A96F}"
 EndProject
