@@ -18,12 +18,14 @@
                     <h1>{{blogPostData.Title}}</h1>
                     <p>Published on : {{blogPostData.PublishedOn}}</p>
                     <p>Number of Comments: {{blogPostData.BlogComments.length}}</p>
-                    <div id="commments" v-show="blogPostData.DisplayComments">
-                        <div v-for="(blogComment, index) in blogPostData.BlogComments" :key="index">
-                            <p>{{blogComment.Comment}}</p>
-                            <p>Posted on: {{blogComment.CommentedOn}}</p>
+                    <blog-comment-section v-if="renderCommentsSection" inline-template :blog-comments-data="blogPostData">
+                        <div id="commments" v-show="blogCommentsData.DisplayComments">
+                            <div v-for="(blogCommentData, index) in blogCommentsData.BlogComments" :key="index">
+                                <p>{{blogCommentData.Comment}}</p>
+                                <p>Posted on: {{blogCommentData.CommentedOn}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </blog-comment-section>                   
                 </div>              
             </blog-post>           
         </div>

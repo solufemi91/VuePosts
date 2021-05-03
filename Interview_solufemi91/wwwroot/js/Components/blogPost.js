@@ -1,4 +1,5 @@
 ﻿import { actions } from '../types.js';
+import blogCommentSection from './blogCommentsSection.js';
 
 export default {
     props: {
@@ -11,5 +12,15 @@ export default {
                 id: selectedBlogId
             });
         }
+    },
+
+    computed: {
+        renderCommentsSection() {
+            return this.blogPostData.BlogComments.length > 0;
+        }
+    },
+
+    components: {
+        'blogCommentSection': blogCommentSection
     }
 };
